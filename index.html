@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Nastaliq Urdu", serif;
+    color: #fff;
+    text-align: center;
+}
+
+.card {
+    background: rgba(0,0,0,0.35);
+    padding: 30px 20px;
+    border-radius: 16px;
+    max-width: 90%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 26px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#yes {
+    background: #e63946;
+    color: #fff;
+}
+
+#yes:hover {
+    background: #ff4d5a;
+}
+
+#no {
+    background: #ccc;
+    color: #333;
+    position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>کناین 🌹</h1>
+
+    <p>
+    یہ کوئی سوال نہیں  
+    یہ ایک احساس ہے،  
+    جو میں دل سے کہنا چاہتا ہوں۔
+    <br><br>
+    کیا تم  
+    <b>حسنین کی ویلنٹائن</b> بنو گی؟
+    </p>
+
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">ہاں ❤️</button>
+        <button id="no" onmouseover="moveNo()">نہیں 🙈</button>
+    </div>
+</div>
+
+<script>
+function moveNo() {
+    const btn = document.getElementById("no");
+    const x = Math.random() * 120 - 60;
+    const y = Math.random() * 120 - 60;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function yesClicked() {
+    document.body.innerHTML = `
+    <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        text-align:center;
+        font-family:'Noto Nastaliq Urdu', serif;
+        background:linear-gradient(135deg,#1d3557,#457b9d);
+        color:white;
+        padding:20px;">
+        <h1 style="font-size:28px;">
+        مجھے معلوم تھا ❤️  
+        <br><br>
+        اب یہ صرف وعدہ نہیں،  
+        ایک خوبصورت سفر ہے۔
+        </h1>
+    </div>`;
+}
+</script>
+
+</body>
+</html>
